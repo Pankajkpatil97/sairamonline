@@ -3,29 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>साईराम ऑनलाइन सेवा आणि ग्रहक सेवा केंद्र</title>
+  <title>Sairam Online Services</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
       background: linear-gradient(135deg, #74ebd5, #ACB6E5);
-      text-align: center;
       color: #333;
     }
     header {
       background: #0077b6;
       color: white;
-      padding: 20px;
-      font-size: 24px;
-      font-weight: bold;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
       animation: slideIn 1.5s ease-out;
     }
-    .container {
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 10px 0;
+    }
+    p {
+      margin: 5px 0;
+    }
+    .section {
+      padding: 30px;
+      text-align: center;
+    }
+    .updates {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      padding: 30px;
+      margin-top: 20px;
     }
     .card {
       background: white;
@@ -33,56 +48,104 @@
       border-radius: 15px;
       box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
       transition: transform 0.3s;
+      animation: fadeIn 2s;
     }
     .card:hover {
       transform: scale(1.05);
     }
-    h2 {
+    .card h2 {
       color: #0077b6;
+    }
+    video, iframe {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 10px;
+      margin-top: 20px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    }
+    footer {
+      background: #0077b6;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 20px;
     }
     @keyframes slideIn {
       from { transform: translateY(-100%); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
   </style>
 </head>
 <body>
-  <header>📑 साईराम ऑनलाइन सेवा आणि ग्रहक सेवा केंद्र</header>
-  <p>खालील प्रमाणपत्रासाठी लागणारी कागदपत्रे पाहण्यासाठी क्लिक करा</p>
 
-  <div class="container">
-    <div class="card">
-      <h2>जात प्रमाणपत्र</h2>
-      <ul>
-        <li>आधार कार्ड</li>
-        <li>शाळा सोडल्याचा दाखला</li>
-        <li>पालकांचे जात प्रमाणपत्र</li>
-        <li>रहिवासी दाखला</li>
-        <li>पासपोर्ट फोटो</li>
-      </ul>
-    </div>
+  <!-- Header with Owner Info -->
+  <header>
+    <img src="images/vk.jpg" alt="Owner Photo">
+    <h1>विशाल पाटील</h1>
+    <p>👨‍💼 Owner – Sairam Online Services</p>
+    <p>📞 7757811757</p>
+    <p>📞 7774811757</p>
+  </header>
 
-    <div class="card">
-      <h2>उत्पन्न प्रमाणपत्र</h2>
-      <ul>
-        <li>आधार कार्ड</li>
-        <li>पॅन कार्ड</li>
-        <li>उत्पन्नाचे दाखले</li>
-        <li>रहिवासी दाखला</li>
-        <li>पासपोर्ट फोटो</li>
-      </ul>
-    </div>
-    
-    <div class="card">
-      <h2>शिष्यवृत्ती अर्ज</h2>
-      <ul>
-        <li>आधार कार्ड</li>
-        <li>शाळा/कॉलेज आयडी</li>
-        <li>मागील वर्षाचे मार्कशीट</li>
-        <li>बँक पासबुक</li>
-        <li>जात / उत्पन्न प्रमाणपत्र</li>
-      </ul>
+  <!-- Latest Updates Section -->
+  <div class="section">
+    <h2>📰 ताज्या अपडेट्स / Latest Updates</h2>
+    <div class="updates">
+      <!-- Updates will be loaded from updates.json -->
+      <p>लोड करत आहे... / Loading...</p>
     </div>
   </div>
+
+  <!-- Video Section -->
+  <div class="section">
+    <h2>🎥 माहिती व्हिडिओ / Info Video</h2>
+    <!-- Local Video Example -->
+    <!--
+    <video controls>
+      <source src="videos/caste_certificate.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    -->
+    <!-- YouTube Video Example -->
+    <iframe width="560" height="315"
+      src="https://www.youtube.com/embed/ysz5S6PUM-U"
+      title="Document Info Video" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Sairam Online Services | Developed with ❤️</p>
+  </footer>
+
+  <!-- Script to Load Updates -->
+  <script>
+    fetch('updates.json')
+      .then(response => response.json())
+      .then(data => {
+        const container = document.querySelector('.updates');
+        container.innerHTML = '';
+        data.forEach(item => {
+          container.innerHTML += `
+            <div class="card">
+              <h2>${item.title}</h2>
+              <p>अर्ज करण्याची अंतिम तारीख: <b>${item.lastDate}</b></p>
+              <p>अपडेट केले: ${item.updatedOn}</p>
+            </div>
+          `;
+        });
+      })
+      .catch(error => {
+        document.querySelector('.updates').innerHTML = "<p style='color:red;'>अपडेट्स लोड होत नाहीत / Failed to load updates</p>";
+        console.error("Error loading updates:", error);
+      });
+  </script>
+
 </body>
 </html>
