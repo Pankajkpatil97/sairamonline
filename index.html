@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>साईराम ऑनलाइन सेवा आणि ग्रहक सेवा केंद्र</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+      text-align: center;
+      color: #333;
+    }
+    header {
+      background: #0077b6;
+      color: white;
+      padding: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      animation: slideIn 1.5s ease-out;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    h2 {
+      color: #0077b6;
+    }
+    @keyframes slideIn {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>📑 साईराम ऑनलाइन सेवा आणि ग्रहक सेवा केंद्र</header>
+  <p>खालील प्रमाणपत्रासाठी लागणारी कागदपत्रे पाहण्यासाठी क्लिक करा</p>
+
+  <div class="container">
+    <div class="card">
+      <h2>जात प्रमाणपत्र</h2>
+      <ul>
+        <li>आधार कार्ड</li>
+        <li>शाळा सोडल्याचा दाखला</li>
+        <li>पालकांचे जात प्रमाणपत्र</li>
+        <li>रहिवासी दाखला</li>
+        <li>पासपोर्ट फोटो</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>उत्पन्न प्रमाणपत्र</h2>
+      <ul>
+        <li>आधार कार्ड</li>
+        <li>पॅन कार्ड</li>
+        <li>उत्पन्नाचे दाखले</li>
+        <li>रहिवासी दाखला</li>
+        <li>पासपोर्ट फोटो</li>
+      </ul>
+    </div>
+    
+    <div class="card">
+      <h2>शिष्यवृत्ती अर्ज</h2>
+      <ul>
+        <li>आधार कार्ड</li>
+        <li>शाळा/कॉलेज आयडी</li>
+        <li>मागील वर्षाचे मार्कशीट</li>
+        <li>बँक पासबुक</li>
+        <li>जात / उत्पन्न प्रमाणपत्र</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
